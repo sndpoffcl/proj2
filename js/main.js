@@ -1,5 +1,6 @@
 import {Car} from './car';
 import {Truck} from './truck';
+import {Bike} from "./bike";
 
 let car = new Car({
 	price: 30000, make: 'Chevy', model: 'Malibu',
@@ -11,6 +12,11 @@ let truck = new Truck({
 	year: 2014, is4by4: true
 });
 
+let bike = new Bike({
+	price: 10000 , make: 'Ducati' , model: '1200R',
+	year: 2015, isElectric: true , has2wheels: true
+});
+
 var output = document.getElementById('output');
 output.innerHTML += `
 	<br/>${car.getDetails() }
@@ -18,4 +24,7 @@ output.innerHTML += `
 	<br/><br />
 	${truck.getDetails() }
 	<br/>Truck total: ${truck.getTotal(.08) }
+	<br/><br />
+	<br/>${bike.getDetails()}
+	<br/>Bike total: ${bike.getTotal(.08)}
 	`;
